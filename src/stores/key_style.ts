@@ -63,15 +63,6 @@ export interface BackgroundSettings {
 
 export interface MouseSettings {
     showMouseActions: boolean;
-    showClicks: boolean;
-    size: number;
-    color: string;
-    keepHighlight: boolean;
-    showIndicator: boolean;
-    keepIndicator: boolean;
-    indicatorSize: number;
-    indicatorOffsetX: number;
-    indicatorOffsetY: number;
 }
 
 export interface KeyStyleState {
@@ -150,15 +141,6 @@ const createKeyStyleStore = createSyncedStore<KeyStyleStore>(
         },
         mouse: {
             showMouseActions: true,
-            showClicks: false,
-            size: 150,
-            color: "#009dff",
-            keepHighlight: false,
-            showIndicator: true,
-            keepIndicator: true,
-            indicatorSize: 50,
-            indicatorOffsetX: 50,
-            indicatorOffsetY: 50,
         },
 
         setAppearance: (appearance) => set((state) => ({ appearance: { ...state.appearance, ...appearance } })),
