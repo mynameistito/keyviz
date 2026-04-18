@@ -1,0 +1,36 @@
+src-tauri/src/app/window.rs
+  921389a108ba92dc 10,12-14,23-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "c6da34c8d7f60c525b9be59374db2e3788cc58c3",
+  "prompts": {
+    "921389a108ba92dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7e1811de-3ff6-4533-be3e-476c5d6a40e2",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Tito",
+      "messages": [],
+      "total_additions": 188,
+      "total_deletions": 25,
+      "accepted_lines": 36,
+      "overriden_lines": 6
+    },
+    "ee263840959f8955": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ac7d5e95-f423-433e-9087-2b0ca61f844b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Tito",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 104,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
