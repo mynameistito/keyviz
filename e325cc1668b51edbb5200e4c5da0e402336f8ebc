@@ -1,0 +1,25 @@
+src/components/settings/mouse.tsx
+  f79131f4bba974df 1,6,20,56
+src/pages/mouse-overlay-page.tsx
+  f79131f4bba974df 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "e325cc1668b51edbb5200e4c5da0e402336f8ebc",
+  "prompts": {
+    "f79131f4bba974df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a6acc029-860a-4ec2-9925-5fc0ead085e3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Tito",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 384,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
