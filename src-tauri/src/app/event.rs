@@ -105,7 +105,7 @@ pub fn start_listener(app_handle: AppHandle, toggle_menu_item: MenuItem<Wry>) {
                     pressed: false,
                 }),
                 EventType::MouseMove { x, y } => {
-                    // Convert Physical -> Logical
+                    // Convert Physical -> Logical (monitor-relative)
                     #[cfg(target_os = "macos")]
                     let (logical_x, logical_y) = (
                         x - app_state.monitor_position.0 as f64,

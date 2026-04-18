@@ -17,10 +17,10 @@ pub fn config_window(window: &tauri::WebviewWindow) {
     }
     #[cfg(target_os = "macos")]
     {
+        // Main key-overlay: cover the primary monitor so JS can shrink it.
         if let Ok(Some(monitor)) = window.primary_monitor() {
             let position = monitor.position();
             let size = monitor.size();
-
             window
                 .set_position(tauri::PhysicalPosition {
                     x: position.x,

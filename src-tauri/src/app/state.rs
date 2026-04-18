@@ -11,6 +11,7 @@ pub struct AppState {
     pub monitor_name: Option<String>,
     pub monitor_scale: f64,
     pub monitor_position: (i32, i32),
+
 }
 
 impl AppState {
