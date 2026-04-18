@@ -48,11 +48,9 @@ export const MouseOverlay = () => {
     const shouldRender = style.showClicks || style.keepHighlight || style.showIndicator || style.keepIndicator;
     if (!shouldRender) return null;
 
-    // The Rust event loop moves this window to sit centered on the cursor on every
-    // MouseMove event, so no CSS transform is needed here — content just fills the window.
     return (
         <div
-            className="w-full h-full relative pointer-events-none"
+            className="relative pointer-events-none"
             style={{ width: style.size, height: style.size }}
         >
             {style.showClicks && (

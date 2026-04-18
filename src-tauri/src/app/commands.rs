@@ -7,10 +7,10 @@ use crate::app::state::AppState;
 #[tauri::command]
 pub fn resize_overlay_window(app: tauri::AppHandle, x: f64, y: f64, width: f64, height: f64) {
     let state = app.state::<Mutex<AppState>>();
-    let app_state = state.lock().unwrap();
-
-    let scale = app_state.monitor_scale;
-    let (mon_x, mon_y) = app_state.monitor_position;
+    let (scale, mon_x, mon_y) = {
+        let app_state = state.lock().unwrap();
+        (app_state.monitor_scale, app_state.monitor_position.0, app_state.monitor_position.1)
+    };
 
     if let Some(window) = app.get_webview_window("main") {
         let phys_x = mon_x + (x * scale) as i32;

@@ -1,4 +1,5 @@
 import { KeyOverlay } from "@/components/key-overlay";
+import { MouseOverlay } from "@/components/mouse-overlay";
 import { KEY_EVENT_STORE, KeyEventStore, useKeyEvent } from "@/stores/key_event";
 import { KEY_STYLE_STORE, KeyStyleStore, useKeyStyle } from '@/stores/key_style';
 import { listenForUpdates } from '@/stores/sync';
@@ -25,6 +26,8 @@ export function Visualization() {
   const appearance = useKeyStyle((state) => state.appearance);
   const onEvent = useKeyEvent((state) => state.onEvent);
   const tick = useKeyEvent((state) => state.tick);
+  const mouseX = useKeyEvent((state) => state.mouse.x);
+  const mouseY = useKeyEvent((state) => state.mouse.y);
 
   const [isListening, setIsListening] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -57,7 +60,7 @@ export function Visualization() {
     const el = contentRef.current;
     if (!el) return;
     updateWindowBounds(el.offsetWidth, el.offsetHeight);
-  }, [updateWindowBounds]);
+  }, [updateWindowBounds, isListening]);
 
   // Track content size changes
   useEffect(() => {
@@ -84,7 +87,7 @@ export function Visualization() {
         rafRef.current = null;
       }
     };
-  }, [updateWindowBounds]);
+  }, [updateWindowBounds, isListening]);
 
   useEffect(() => {
     const unlistenPromises = [
@@ -114,6 +117,12 @@ export function Visualization() {
   return (
     <div className="w-screen h-screen relative overflow-hidden">
       <KeyOverlay contentRef={contentRef} />
+      <div
+        className="pointer-events-none"
+        style={{ position: 'fixed', left: mouseX, top: mouseY, transform: 'translate(-50%, -50%)' }}
+      >
+        <MouseOverlay />
+      </div>
     </div>
   );
 }
