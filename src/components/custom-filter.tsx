@@ -141,10 +141,10 @@ export const CustomFilter = () => {
 
   return (
     <KeyboardContext.Provider value={{ isCtrlHeld, hoveredKey, hoveredCategory, setHoveredKey, setHoveredCategory }}>
-      <div className="w-full h-100 flex flex-col gap-4 items-center justify-center">
+      <div className="w-full h-100 min-h-0 flex flex-col gap-4 items-center justify-center">
         {activeTab === 'Keyboard' &&
           <div
-            className="w-full p-3 max-w-196 flex flex-col gap-2 bg-secondary rounded-2xl"
+            className="w-full min-h-0 overflow-y-auto p-3 max-w-196 flex flex-col gap-2 bg-secondary rounded-2xl"
           >
             {/* Row 1: Function Keys */}
             <div className="flex gap-2 justify-between w-full">
@@ -163,6 +163,21 @@ export const CustomFilter = () => {
               <ButtonKey rawKey={RawKey.F12} />
               <ButtonKey rawKey={RawKey.Insert} />
               <ButtonKey rawKey={RawKey.Delete} />
+            </div>
+
+            <div className="flex gap-2 justify-center w-full">
+              <ButtonKey rawKey={RawKey.F13} />
+              <ButtonKey rawKey={RawKey.F14} />
+              <ButtonKey rawKey={RawKey.F15} />
+              <ButtonKey rawKey={RawKey.F16} />
+              <ButtonKey rawKey={RawKey.F17} />
+              <ButtonKey rawKey={RawKey.F18} />
+              <ButtonKey rawKey={RawKey.F19} />
+              <ButtonKey rawKey={RawKey.F20} />
+              <ButtonKey rawKey={RawKey.F21} />
+              <ButtonKey rawKey={RawKey.F22} />
+              <ButtonKey rawKey={RawKey.F23} />
+              <ButtonKey rawKey={RawKey.F24} />
             </div>
 
             {/* Row 2: Numbers */}
@@ -255,7 +270,7 @@ export const CustomFilter = () => {
         {
           activeTab === 'Mouse' &&
           <div
-            className="h-fit w-fit p-5 grid grid-cols-3 gap-4 justify-center bg-secondary rounded-t-[44%] rounded-b-[40%]"
+            className="h-fit min-h-0 w-fit overflow-y-auto p-5 grid grid-cols-3 gap-4 justify-center bg-secondary rounded-t-[44%] rounded-b-[40%]"
           >
             <ButtonKey rawKey={RawKey.Left} className="mt-7" />
             <div className="flex flex-col gap-4 items-center">
@@ -270,7 +285,7 @@ export const CustomFilter = () => {
         {
           activeTab === 'Numpad' &&
           <div
-            className="w-56 p-3 grid grid-cols-4 gap-2 bg-secondary rounded-2xl"
+            className="w-56 min-h-0 overflow-y-auto p-3 grid grid-cols-4 gap-2 bg-secondary rounded-2xl"
           >
             {/* Row 1 */}
             <ButtonKey rawKey={RawKey.NumLock} />
@@ -306,7 +321,7 @@ export const CustomFilter = () => {
         <ToggleGroup
           type="single"
           spacing={4}
-          className="p-1 border rounded-xl"
+          className="shrink-0 p-1 border rounded-xl"
           value={activeTab}
           onValueChange={(value) => setActiveTab(value as 'Keyboard' | 'Mouse' | 'Numpad')}
         >
