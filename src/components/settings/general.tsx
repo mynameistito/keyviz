@@ -58,13 +58,11 @@ export const GeneralSettings = () => {
                             </Button>
                         </DrawerTrigger>
                         <DrawerContent>
-                            <DrawerContent>
-                                <DrawerHeader>
-                                    <DrawerTitle>Custom Filter</DrawerTitle>
-                                    <DrawerDescription>Select which keys to display. Hold down Ctrl to toggle related keys.</DrawerDescription>
-                                </DrawerHeader>
-                                <CustomFilter />
-                            </DrawerContent>
+                            <DrawerHeader className="shrink-0">
+                                <DrawerTitle>Custom Filter</DrawerTitle>
+                                <DrawerDescription>Select which keys to display. Hold down Ctrl to toggle related keys.</DrawerDescription>
+                            </DrawerHeader>
+                            <CustomFilter />
                         </DrawerContent>
                     </Drawer>
                 }
